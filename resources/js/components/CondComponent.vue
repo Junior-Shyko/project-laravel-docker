@@ -65,7 +65,7 @@
       methods: {
           infiniteHandler($state){
             this.page++
-            let url = 'http://192.168.99.100:3000/api/cond?page=' + this.page
+            let url = 'api/cond?page=' + this.page
             
             axios.get(url)
             .then(response => {

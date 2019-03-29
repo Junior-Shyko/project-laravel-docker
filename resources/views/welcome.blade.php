@@ -28,7 +28,15 @@
           font-size: 3.5rem;
         }
       }
-    </style>       
+    </style>    
+    <script type="text/javascript">
+      //GLOBALIZANDO URL
+  var project_survey = ':3000/';
+  domin  =  window.location.protocol + "//" + window.location.hostname;
+  var domain_complet = domin + project_survey; 
+  var url = window.location.origin;
+
+ </script>   
     </head>
     <body>
     <header>

@@ -11,6 +11,7 @@ window.Vue = require('vue');
 
 Vue.component('cond', require('./components/CondComponent.vue').default);
 Vue.component('InfiniteLoading', require('vue-infinite-loading').default);
+Vue.component('user-corrector', require('./components/UserCorrectorComponent.vue').default);
 
 
 const app = new Vue({

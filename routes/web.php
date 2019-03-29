@@ -14,11 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-Route::get('cadastrar', 'UserController@create');
-=======
 
->>>>>>> 73bbcf88b77d51d418ca37be1049baa1bff890cc
+Route::get('cadastrar', 'UserController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
