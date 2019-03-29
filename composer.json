@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Condominium\\": "app/"
         },
         "classmap": [
             "database/seeds",
