@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('cadastrar', 'UserController@create');
+Route::resource('user' , 'UserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
