@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  
+      <link href="{{ asset('css/pnotify.custom.min.css') }}" rel="stylesheet">
     <title>Laravel</title>
 
         <!-- Fonts -->
@@ -90,15 +90,34 @@
      </div>
   </section>
 
-  <div class="album py-5 bg-light" id="app">
+  <div class="album py-5 bg-light"  id="main">
    
-    <cond></cond>  
+   <div class="container">
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h1>VUEjs y Laravel</h1>
+                    <ul class="list-group">
+                        <li v-for="item in lists" class="list-group-item">                      
+                            @{{ item.name }} <strong>@{{ item.email }}</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-8">
+                    <h1>JSON</h1>
+                    <pre>
+                        @{{ $data | json }}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
     
   </div>
 
 </main>
   
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{'js/app.js'}}"></script>
 <script>
 $.ajaxSetup({
     headers: {

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="card" style="width: 100%">
                         <div class="card-header">
-                            Cadastrar Avaliador
+                            Cadastrar Avaliadordfsdf
                         </div>
                     <div class="card-body">                      
                         <form @submit.prevent="submit">
@@ -35,8 +35,10 @@
                                 <label for="">Númemro</label>
                                 <input type="text" class="form-control" id="number" name="number"  v-model="fields.number" placeholder="Enter email">
                             </div>
-                                
-                            <button type="submit" class="btn btn-primary float-right">
+                            
+                            <a href="#" id="novoclick">Click</a>
+
+                            <button type="submit" class="btn btn-primary">
                                 <i class="fa fa-save"></i>
                                 Enviar</button>
                         </form>
@@ -50,11 +52,18 @@
 </template>
 <script>
 export default {
+
+
+
   data() {
     return {
       fields: {},
       errors: {},
     }
+  },
+  created: function () {
+    // `this` points to the vm instance
+    console.log('a is: ' + this.a)
   },
   methods: {
     submit() {
@@ -69,6 +78,9 @@ export default {
         }
       });
     },
+    chamaalert() {
+      alert('aqui');
+    }
   },
 }
 </script>

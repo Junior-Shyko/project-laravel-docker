@@ -1,13 +1,20 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h1>VUEjs y Laravel</h1>
+                    <ul class="list-group">
+                        <li v-for="item in lists" class="list-group-item">                      
+                            @{{ item.name }} <strong>@{{ item.email }}</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-8">
+                    <h1>JSON</h1>
+                    <pre>
+                        @{{ $data | json }}
+                    </pre>
                 </div>
             </div>
         </div>
@@ -16,8 +23,8 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+            mounted() {
+                console.log('Component mounted.')
+            }
     }
 </script>
