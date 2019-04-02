@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
 mix.scripts(['resources/js/pnotify.custom.min.js'], 'public/js/plugins.js');
+//mix.stylus('node_modules/pnotify/dist/pnotify.css', 'public/css/custom.css');
 // mix.scripts([
 //    'node_modules/jquery/dist/jquery.min.js',
 //    'node_modules/bootstrap/dist/js/bootstrap.min.js',

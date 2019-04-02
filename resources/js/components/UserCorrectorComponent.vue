@@ -36,12 +36,13 @@
                                 <input type="text" class="form-control" id="number" name="number"  v-model="fields.number" placeholder="Enter email">
                             </div>
                             
-                            <a href="#" id="novoclick">Click</a>
+                           
 
                             <button type="submit" class="btn btn-primary">
                                 <i class="fa fa-save"></i>
                                 Enviar</button>
                         </form>
+                       
                     </div>    
                 </div>   
             </div>         
@@ -51,10 +52,9 @@
 </div>
 </template>
 <script>
-export default {
 
-
-
+export default {  
+  
   data() {
     return {
       fields: {},
@@ -63,14 +63,21 @@ export default {
   },
   created: function () {
     // `this` points to the vm instance
-    console.log('a is: ' + this.a)
+    console.log('a is: ' + this.a);
+     
   },
   methods: {
     submit() {
       this.errors = {};
       var url = domain_complet + 'user';
       axios.post(url, this.fields).then(response => {
-        alert('Message sent!');
+        new PNotify({
+        title: 'Cadastrado!',
+        text: 'Usuario Cadastrado com sucesso',
+        type: 'success',
+        icon: 'fa fa-check'
+      });
+       
       }).catch(error => {
         if (error.response.status === 422) {
           this.errors = error.response.data.errors || {};

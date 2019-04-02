@@ -25,5 +25,6 @@
         "vue": "^2.5.17",
         "vue-infinite-loading": "^2.4.3",
         "vue-template-compiler": "^2.6.10"
+        
     }
 }

@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import VuePNotify from 'vue-pnotify';
+Vue.use(VuePNotify);
 
 Vue.component('cond', require('./components/CondComponent.vue').default);
 Vue.component('InfiniteLoading', require('vue-infinite-loading').default);
@@ -20,7 +22,5 @@ const app = new Vue({
 });
 
 $(document).ready(function () {
-  $("#novoclick").click(function(){
-    alert('jquery');
-  });
+  PNotify.prototype.options.styling = "fontawesome";
 });

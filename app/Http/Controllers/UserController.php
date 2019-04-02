@@ -3,6 +3,7 @@
 namespace Condominium\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Condominium\User;
 
 class UserController extends Controller
 {
@@ -34,7 +35,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        try {
+            User::create($request->all());
+            return response()->json(['message' => 'success'],200);
+        } catch (\Throwable $th) {
+             return response()->json(['message' => 'Errr: '.$th->getMessage()],400);
+        }
     }
 
     /**
