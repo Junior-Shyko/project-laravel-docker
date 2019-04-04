@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('cadastrar', 'UserController@create');
+Route::get('all-user', 'UserController@getUser');
 Route::resource('user' , 'UserController');
 Auth::routes();
 

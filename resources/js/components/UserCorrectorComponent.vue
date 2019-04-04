@@ -52,6 +52,7 @@
 </div>
 </template>
 <script>
+import custom from '../../../public/js/custom.js';
 
 export default {  
   
@@ -64,20 +65,14 @@ export default {
   created: function () {
     // `this` points to the vm instance
     console.log('a is: ' + this.a);
-     
+ custom.deleteNotify();
   },
   methods: {
     submit() {
       this.errors = {};
       var url = domain_complet + 'user';
       axios.post(url, this.fields).then(response => {
-        new PNotify({
-        title: 'Cadastrado!',
-        text: 'Usuario Cadastrado com sucesso',
-        type: 'success',
-        icon: 'fa fa-check'
-      });
-       
+           custom.successNotify('Usuário cadastrado com sucesso');       
       }).catch(error => {
         if (error.response.status === 422) {
           this.errors = error.response.data.errors || {};
@@ -85,9 +80,6 @@ export default {
         }
       });
     },
-    chamaalert() {
-      alert('aqui');
-    }
   },
 }
 </script>
