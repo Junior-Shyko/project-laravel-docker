@@ -8,14 +8,12 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
-import VuePNotify from 'vue-pnotify';
-Vue.use(VuePNotify);
-
+  
 Vue.component('cond', require('./components/CondComponent.vue').default);
 Vue.component('InfiniteLoading', require('vue-infinite-loading').default);
 Vue.component('user-corrector', require('./components/UserCorrectorComponent.vue').default);
-Vue.component('user', require('./components/UserComponent.vue').default);
+Vue.component('user', require('./components/user/UserComponent.vue').default);
+Vue.component('edit-user', require('./components/user/edit.vue').default);
 
 
 const app = new Vue({
